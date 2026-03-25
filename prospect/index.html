@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>AI活用の第一歩 | 無料メールマガジン - 株式会社MoMo</title>
+    <meta name="description" content="AI研修の導入を検討中の企業様向け。無料のAI活用スタートガイド付き。業種別成功事例、助成金情報、限定セミナー案内をお届けします。" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#195592",
+                        "primary-mid": "#279FC9",
+                        "primary-light": "#35EAFF",
+                        "bg-main": "#F8FEFF",
+                        "bg-section": "#EDF6FA",
+                        "text-main": "#1e293b",
+                        "text-sub": "#64748b",
+                    },
+                    fontFamily: {
+                        "display": ["Noto Sans JP", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .brand-gradient {
+            background: linear-gradient(150deg, #195592 0%, #279FC9 56%, #35EAFF 100%);
+        }
+
+        .gradient-text {
+            background: linear-gradient(150deg, #195592 0%, #279FC9 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .glass-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 24px rgba(25, 85, 146, 0.06);
+        }
+
+        .hero-bg {
+            background: linear-gradient(180deg, #F8FEFF 0%, #EDF6FA 100%);
+        }
+
+        .cta-gradient {
+            background: linear-gradient(150deg, #195592 0%, #279FC9 56%, #35EAFF 100%) !important;
+            box-shadow: 0 10px 15px -3px rgba(25, 85, 146, 0.2) !important;
+            border: none !important;
+            color: white !important;
+        }
+
+        #confirmOverlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 100;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(4px);
+        }
+
+        #confirmOverlay.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body class="bg-bg-main font-display text-text-main">
+    <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+
+        <!-- Header -->
+        <header
+            class="flex items-center justify-between px-6 py-5 lg:px-20 border-b border-slate-100 bg-white/80 backdrop-blur-md sticky top-0 z-50">
+            <div class="flex items-center gap-3">
+                <h2 class="text-xl font-bold tracking-tight text-text-main">MoMo <span
+                        class="text-primary-mid">AI</span></h2>
+            </div>
+            <a href="#register"
+                class="px-5 py-2 rounded-lg brand-gradient text-white text-sm font-bold hover:brightness-105 transition-all shadow-md shadow-primary/15">
+                登録する
+            </a>
+        </header>
+
+        <main class="flex flex-col items-center">
+            <!-- Hero Section -->
+            <section class="w-full max-w-7xl px-6 py-20 lg:py-28 flex flex-col items-center text-center hero-bg">
+                <div
+                    class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold tracking-widest mb-8">
+                    <span class="material-symbols-outlined text-sm">stars</span>
+                    登録特典あり
+                </div>
+                <h1
+                    class="text-4xl md:text-6xl lg:text-7xl font-black leading-[1.1] mb-8 max-w-4xl tracking-tight text-text-main">
+                    まだAIを使いこなせていない<br />
+                    <span class="gradient-text">企業の方へ</span>
+                </h1>
+                <p class="text-lg md:text-xl text-text-sub max-w-2xl leading-relaxed mb-12">
+                    たった5分の情報収集が、会社の未来を変える。<br />
+                    最先端のAI導入事例と助成金活用術を凝縮した<span class="text-primary font-bold">限定ガイドを無料公開中！</span>
+                </p>
+                <a class="px-10 py-4 brand-gradient rounded-xl text-white font-black text-lg hover:scale-105 hover:shadow-lg hover:shadow-primary/20 transition-all shadow-md shadow-primary/15"
+                    href="#register">
+                    無料ガイドを受け取る →
+                </a>
+            </section>
+
+            <!-- Lead Magnet Section -->
+            <section class="w-full max-w-5xl px-6 py-20 bg-white">
+                <div
+                    class="bg-bg-section rounded-3xl p-8 lg:p-16 flex flex-col lg:flex-row items-center gap-12 border border-slate-200 shadow-xl shadow-primary/5">
+                    <div class="flex-1 space-y-6">
+                        <span class="text-primary font-bold text-sm tracking-widest">登録特典</span>
+                        <h2 class="text-3xl lg:text-4xl font-bold leading-tight text-text-main">
+                            AI活用成功事例集<br />
+                            <span class="gradient-text">無料プレゼント！</span>
+                        </h2>
+                        <p class="text-text-sub leading-relaxed">
+                            導入コストを最小限に抑えつつ、業務効率を劇的に改善した事例を大公開。
+                        </p>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-3 text-sm text-text-main">
+                                <span class="material-symbols-outlined text-primary-mid text-lg">check_circle</span>
+                                200社以上の成功事例から厳選したAI活用
+                            </li>
+                            <li class="flex items-center gap-3 text-sm text-text-main">
+                                <span class="material-symbols-outlined text-primary-mid text-lg">check_circle</span>
+                                最大79%カバーする助成金シミュレーション
+                            </li>
+                            <li class="flex items-center gap-3 text-sm text-text-main">
+                                <span class="material-symbols-outlined text-primary-mid text-lg">check_circle</span>
+                                研修を受講された企業様へのインタビュー動画
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="flex-1 w-full max-w-sm">
+                        <img src="images/%E3%83%97%E3%83%AC%E3%82%BC%E3%83%B3%E3%83%88.png" alt="AI活用スタートガイド"
+                            class="w-full h-auto rounded-xl shadow-lg border border-slate-200 rotate-3 transform transition-transform hover:rotate-0" />
+                    </div>
+                </div>
+            </section>
+
+            <!-- Benefits Section -->
+            <section class="w-full px-6 py-20 bg-bg-section">
+                <div class="max-w-7xl mx-auto">
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl font-bold mb-4 text-text-main">メルマガで届く3つの価値</h2>
+                        <p class="text-text-sub">専門的な知見で、企業のAI導入を全方位からバックアップします。</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div
+                            class="glass-card rounded-2xl p-8 group hover:shadow-lg hover:shadow-primary/10 transition-all">
+                            <div
+                                class="size-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
+                                <span class="material-symbols-outlined text-3xl">bar_chart</span>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3 text-text-main">最新のAI活用情報</h3>
+                            <p class="text-text-sub text-sm leading-relaxed">
+                                ChatGPTや生成AIの最新動向から、業務に直結する活用テクニックまで。知っておくべきAI情報を毎週厳選してお届けします。</p>
+                        </div>
+                        <div
+                            class="glass-card rounded-2xl p-8 group hover:shadow-lg hover:shadow-primary/10 transition-all">
+                            <div
+                                class="size-14 rounded-xl bg-primary-mid/10 flex items-center justify-center text-primary-mid mb-6 group-hover:scale-110 transition-transform">
+                                <span class="material-symbols-outlined text-3xl">payments</span>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3 text-text-main">助成金・補助金速報</h3>
+                            <p class="text-text-sub text-sm leading-relaxed">
+                                最大79%のコストをカバーできる助成金・補助金の最新情報をいち早くお届け。申請期限や新制度の速報を見逃しません。</p>
+                        </div>
+                        <div
+                            class="glass-card rounded-2xl p-8 group hover:shadow-lg hover:shadow-primary/10 transition-all">
+                            <div
+                                class="size-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
+                                <span class="material-symbols-outlined text-3xl">settings_voice</span>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3 text-text-main">限定セミナー優先招待</h3>
+                            <p class="text-text-sub text-sm leading-relaxed">
+                                登録者限定で開催される、非公開の最新AIトレンドセミナーやワークショップへの優先案内をお届け。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Stats Section -->
+            <section class="w-full py-16 brand-gradient">
+                <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 text-white text-center">
+                    <div class="flex flex-col items-center">
+                        <span class="text-5xl font-black mb-2 tracking-tighter">200社以上</span>
+                        <span class="text-sm font-bold tracking-widest opacity-80">AI導入支援実績</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <span class="text-5xl font-black mb-2 tracking-tighter">98%</span>
+                        <span class="text-sm font-bold tracking-widest opacity-80">研修満足度</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <span class="text-5xl font-black mb-2 tracking-tighter">平均40%UP</span>
+                        <span class="text-sm font-bold tracking-widest opacity-80">業務効率改善</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Registration Form -->
+            <section class="w-full max-w-3xl px-6 py-24 mx-auto" id="register">
+                <div
+                    class="bg-bg-section border border-slate-200 rounded-3xl p-8 lg:p-12 shadow-xl shadow-primary/5 relative overflow-hidden">
+                    <div class="absolute -bottom-20 -right-20 w-64 h-64 bg-primary-light/10 rounded-full blur-[80px]">
+                    </div>
+                    <div class="text-center mb-10 relative z-10">
+                        <h2 class="text-3xl font-bold mb-4 text-text-main">無料ガイドを受け取る</h2>
+                        <p class="text-text-sub">以下のフォームを入力して、限定ガイド(PDF)を今すぐ受け取りましょう。</p>
+                    </div>
+                    <form id="optinForm" class="space-y-6 relative z-10" onsubmit="return showConfirm(event)">
+                        <input type="hidden" name="type" value="prospect" />
+
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold tracking-widest text-text-sub" for="name">お名前 <span
+                                    class="text-primary text-[10px] ml-1">必須</span></label>
+                            <input id="name" name="name"
+                                class="w-full bg-white border border-slate-200 rounded-lg px-4 py-3 focus:outline-none focus:border-primary-mid focus:ring-2 focus:ring-primary-mid/20 transition-colors text-text-main placeholder:text-slate-400"
+                                placeholder="田中 太郎" type="text" required />
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold tracking-widest text-text-sub" for="company">会社名 <span
+                                    class="text-primary text-[10px] ml-1">必須</span></label>
+                            <input id="company" name="company"
+                                class="w-full bg-white border border-slate-200 rounded-lg px-4 py-3 focus:outline-none focus:border-primary-mid focus:ring-2 focus:ring-primary-mid/20 transition-colors text-text-main placeholder:text-slate-400"
+                                placeholder="株式会社〇〇" type="text" required />
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold tracking-widest text-text-sub" for="email">メールアドレス <span
+                                    class="text-primary text-[10px] ml-1">必須</span></label>
+                            <input id="email" name="email"
+                                class="w-full bg-white border border-slate-200 rounded-lg px-4 py-3 focus:outline-none focus:border-primary-mid focus:ring-2 focus:ring-primary-mid/20 transition-colors text-text-main placeholder:text-slate-400"
+                                placeholder="tanaka@company.co.jp" type="email" required />
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold tracking-widest text-text-sub" for="industry">業種 <span
+                                    class="text-primary text-[10px] ml-1">必須</span></label>
+                            <select id="industry" name="industry"
+                                class="w-full bg-white border border-slate-200 rounded-lg px-4 py-3 focus:outline-none focus:border-primary-mid focus:ring-2 focus:ring-primary-mid/20 transition-colors text-text-main appearance-none"
+                                required>
+                                <option value="">選択してください</option>
+                                <option value="製造業">製造業</option>
+                                <option value="小売・流通">小売・流通</option>
+                                <option value="IT・通信">IT・通信</option>
+                                <option value="サービス業">サービス業</option>
+                                <option value="医療・福祉">医療・福祉</option>
+                                <option value="建設・不動産">建設・不動産</option>
+                                <option value="金融・保険">金融・保険</option>
+                                <option value="教育">教育</option>
+                                <option value="その他">その他</option>
+                            </select>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold tracking-widest text-text-sub" for="department">部署 <span
+                                    class="text-primary text-[10px] ml-1">必須</span></label>
+                            <input id="department" name="department"
+                                class="w-full bg-white border border-slate-200 rounded-lg px-4 py-3 focus:outline-none focus:border-primary-mid focus:ring-2 focus:ring-primary-mid/20 transition-colors text-text-main placeholder:text-slate-400"
+                                placeholder="営業部" type="text" required />
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold tracking-widest text-text-sub" for="position">役職 <span
+                                    class="text-primary text-[10px] ml-1">必須</span></label>
+                            <input id="position" name="position"
+                                class="w-full bg-white border border-slate-200 rounded-lg px-4 py-3 focus:outline-none focus:border-primary-mid focus:ring-2 focus:ring-primary-mid/20 transition-colors text-text-main placeholder:text-slate-400"
+                                placeholder="課長" type="text" required />
+                        </div>
+
+                        <button
+                            class="w-full h-14 rounded-xl brand-gradient text-white font-black text-lg hover:shadow-lg hover:shadow-primary/20 transition-all transform hover:-translate-y-1 mt-4 cursor-pointer"
+                            type="submit">
+                            無料ガイドを受け取る
+                        </button>
+
+                        <div class="flex flex-col items-center gap-4 mt-6">
+                            <div class="flex items-center gap-2 text-xs text-text-sub">
+                                <span class="material-symbols-outlined text-sm">lock</span>
+                                個人情報は厳重に管理いたします
+                            </div>
+                            <p class="text-[10px] text-slate-400">
+                                配信停止はいつでも可能です。ご登録で<a class="underline hover:text-primary transition-colors"
+                                    href="https://momo-gpt.com/privacy-policy/"
+                                    target="_blank">プライバシーポリシー</a>に同意したものとみなされます。
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="w-full py-12 border-t border-slate-100 bg-white flex flex-col items-center gap-6">
+            <div class="flex items-center gap-2">
+                <span class="text-sm font-bold text-text-main">MoMo AI</span>
+            </div>
+            <div class="flex items-center gap-8 text-xs text-text-sub">
+                <span>© 2024 株式会社MoMo</span>
+                <a class="hover:text-primary transition-colors" href="https://momo-gpt.com/privacy-policy/"
+                    target="_blank">プライバシーポリシー</a>
+                <a class="hover:text-primary transition-colors" href="https://momo-gpt.com/" target="_blank">会社サイト</a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- 確認画面オーバーレイ -->
+    <div id="confirmOverlay">
+        <div class="max-w-2xl w-full bg-white rounded-2xl shadow-xl border border-slate-200 p-8 md:p-12 mx-4">
+            <div class="text-center mb-10">
+                <h2 class="text-2xl font-black text-text-main mb-2">登録内容の確認</h2>
+                <p class="text-text-sub">内容をご確認の上、確定ボタンを押してください。</p>
+            </div>
+            <div class="space-y-4" id="confirmFields"></div>
+            <div class="mt-12 flex flex-col sm:flex-row gap-4">
+                <button type="button" onclick="hideConfirm()"
+                    class="flex-1 h-14 rounded-xl border-2 border-slate-200 text-text-sub font-bold hover:bg-slate-50 transition-all cursor-pointer">
+                    修正する
+                </button>
+                <button type="button" onclick="submitForm()"
+                    class="flex-[2] h-14 rounded-xl cta-gradient text-white font-black text-lg hover:shadow-2xl transition-all cursor-pointer">
+                    確定してガイドを受け取る
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var GAS_URL = 'https://script.google.com/macros/s/AKfycbwEhV3wPnZU-VN9iTsDC3pkvCB-babz0ELwaTRfZM22Yd0PTbgxsazWHoz8TRRZdPrlWQ/exec';
+        var fieldLabels = { name: 'お名前', company: '会社名', email: 'メールアドレス', industry: '業種', department: '部署', position: '役職' };
+
+        function showConfirm(e) {
+            e.preventDefault();
+            var form = document.getElementById('optinForm');
+            var fields = document.getElementById('confirmFields');
+            fields.innerHTML = '';
+            ['name', 'company', 'email', 'industry', 'department', 'position'].forEach(function (key) {
+                var val = form.elements[key].value;
+                fields.innerHTML += '<div class="flex flex-col md:flex-row md:items-center py-4 border-b border-slate-100">'
+                    + '<span class="w-32 text-sm font-bold text-text-sub mb-1 md:mb-0">' + fieldLabels[key] + '</span>'
+                    + '<span class="text-text-main font-medium">' + escapeHtml(val) + '</span></div>';
+            });
+            document.getElementById('confirmOverlay').classList.add('active');
+            return false;
+        }
+
+        function hideConfirm() {
+            document.getElementById('confirmOverlay').classList.remove('active');
+        }
+
+        function submitForm() {
+            var form = document.getElementById('optinForm');
+            var btn = document.querySelector('#confirmOverlay button:last-child');
+            btn.textContent = '送信中...';
+            btn.disabled = true;
+
+            var formData = new FormData(form);
+            // GAS doPost はフォームPOSTを受け付ける
+            form.action = GAS_URL;
+            form.method = 'POST';
+            form.submit();
+        }
+
+        function escapeHtml(str) {
+            var div = document.createElement('div');
+            div.textContent = str;
+            return div.innerHTML;
+        }
+    </script>
+</body>
+
+</html>

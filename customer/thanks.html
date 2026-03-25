@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>登録完了 - MoMo AI通信</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#195592",
+                        "primary-mid": "#279FC9",
+                        "primary-light": "#35EAFF",
+                        "bg-main": "#F8FEFF",
+                        "bg-section": "#EDF6FA",
+                        "text-main": "#1e293b",
+                        "text-sub": "#64748b",
+                    },
+                    fontFamily: { "display": ["Noto Sans JP", "sans-serif"] },
+                },
+            },
+        }
+    </script>
+    <style>
+        .brand-gradient { background: linear-gradient(150deg, #195592 0%, #279FC9 56%, #35EAFF 100%); }
+        .hero-bg { background: linear-gradient(180deg, #F8FEFF 0%, #EDF6FA 100%); }
+    </style>
+</head>
+
+<body class="bg-bg-main text-text-main font-display">
+    <div class="relative min-h-screen flex flex-col">
+        <header class="max-w-7xl mx-auto w-full px-6 py-5 flex items-center border-b border-slate-100 bg-white">
+            <h1 class="text-2xl font-bold tracking-tight text-text-main">MoMo <span class="text-primary-mid">AI通信</span></h1>
+        </header>
+
+        <main class="flex-grow flex items-center justify-center py-12 px-6 hero-bg">
+            <div class="max-w-2xl w-full bg-white rounded-2xl shadow-xl shadow-primary/5 border border-slate-200 p-8 md:p-12 text-center">
+                <div class="mb-8">
+                    <div class="w-20 h-20 brand-gradient rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg shadow-primary/20">
+                        <span class="material-symbols-outlined text-white text-4xl">check</span>
+                    </div>
+                    <h2 class="text-3xl font-black text-text-main mb-4">ご登録ありがとうございます！</h2>
+                    <p class="text-text-sub leading-relaxed mb-8">
+                        「MoMo AI通信」への登録が完了しました。<br />
+                        ご入力いただいたメールアドレスに確認メールをお送りしましたので、ご確認ください。
+                    </p>
+                    <div class="bg-bg-section rounded-xl p-6 border border-slate-100 mb-8 text-left">
+                        <p class="text-sm text-text-main font-bold mb-2">メールが届かない場合：</p>
+                        <ul class="text-xs text-text-sub space-y-2 list-disc list-inside">
+                            <li>迷惑メールフォルダに入っていないかご確認ください。</li>
+                            <li>「momo-gpt.com」からのメールを受信できるよう設定をお願いします。</li>
+                        </ul>
+                    </div>
+                </div>
+                <a href="https://momo-gpt.com/" class="inline-block px-10 py-4 brand-gradient rounded-xl font-bold text-white shadow-lg shadow-primary/20 hover:scale-105 transition-all">公式サイトへ戻る</a>
+            </div>
+        </main>
+
+        <footer class="w-full py-12 border-t border-slate-100 bg-white">
+            <div class="max-w-7xl mx-auto px-6 text-center">
+                <p class="text-xs text-text-sub">Copyright © 2024 株式会社MoMo All Rights Reserved.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
