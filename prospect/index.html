@@ -222,6 +222,7 @@
                     </div>
                     <form id="optinForm" class="space-y-6 relative z-10" onsubmit="return showConfirm(event)">
                         <input type="hidden" name="type" value="prospect" />
+                        <input type="hidden" name="ref" id="refField" value="" />
 
                         <div class="space-y-2">
                             <label class="text-xs font-bold tracking-widest text-text-sub" for="name">お名前 <span
@@ -340,8 +341,19 @@
     </div>
 
     <script>
-        var GAS_URL = 'https://script.google.com/macros/s/AKfycbwEhV3wPnZU-VN9iTsDC3pkvCB-babz0ELwaTRfZM22Yd0PTbgxsazWHoz8TRRZdPrlWQ/exec';
+        var GAS_URL = 'https://script.google.com/macros/s/AKfycbwP7Duybewv7KuEP5DhSNS4IpWDoOhPWdUvVcwH4fGAWblyYuLsD4LmcZv0DM2wkLZGfw/exec';
         var fieldLabels = { name: 'お名前', company: '会社名', email: 'メールアドレス', industry: '業種', department: '部署', position: '役職' };
+
+        (function() {
+            var params = new URLSearchParams(window.location.search);
+            var ref = params.get('ref');
+            if (ref) {
+                var refField = document.getElementById('refField');
+                if (refField) refField.value = ref;
+                var emailField = document.querySelector('input[name="email"]');
+                if (emailField && !emailField.value) emailField.value = ref;
+            }
+        })();
 
         function showConfirm(e) {
             e.preventDefault();
@@ -367,9 +379,6 @@
             var btn = document.querySelector('#confirmOverlay button:last-child');
             btn.textContent = '送信中...';
             btn.disabled = true;
-
-            var formData = new FormData(form);
-            // GAS doPost はフォームPOSTを受け付ける
             form.action = GAS_URL;
             form.method = 'POST';
             form.submit();
