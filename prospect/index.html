@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link rel="icon" href="https://www.google.com/s2/favicons?domain=momo-gpt.com&sz=32" type="image/png">
     <title>AI活用の第一歩 | 無料メールマガジン - 株式会社MoMo</title>
     <meta name="description" content="AI研修の導入を検討中の企業様向け。無料のAI活用スタートガイド付き。業種別成功事例、助成金情報、限定セミナー案内をお届けします。" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -70,14 +71,16 @@
 
         #confirmOverlay.active {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             justify-content: center;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
         }
     </style>
 </head>
 
-<body class="bg-bg-main font-display text-text-main">
-    <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<body class="bg-bg-main font-display text-text-main overflow-x-hidden">
+    <div class="relative flex min-h-screen w-full flex-col">
 
         <!-- Header -->
         <header
@@ -222,7 +225,6 @@
                     </div>
                     <form id="optinForm" class="space-y-6 relative z-10" onsubmit="return showConfirm(event)">
                         <input type="hidden" name="type" value="prospect" />
-                        <input type="hidden" name="ref" id="refField" value="" />
 
                         <div class="space-y-2">
                             <label class="text-xs font-bold tracking-widest text-text-sub" for="name">お名前 <span
@@ -321,7 +323,7 @@
 
     <!-- 確認画面オーバーレイ -->
     <div id="confirmOverlay">
-        <div class="max-w-2xl w-full bg-white rounded-2xl shadow-xl border border-slate-200 p-8 md:p-12 mx-4">
+        <div class="max-w-2xl w-full bg-white rounded-2xl shadow-xl border border-slate-200 p-8 md:p-12 mx-4 my-auto" style="flex-shrink:0">
             <div class="text-center mb-10">
                 <h2 class="text-2xl font-black text-text-main mb-2">登録内容の確認</h2>
                 <p class="text-text-sub">内容をご確認の上、確定ボタンを押してください。</p>
@@ -341,19 +343,8 @@
     </div>
 
     <script>
-        var GAS_URL = 'https://script.google.com/macros/s/AKfycbwP7Duybewv7KuEP5DhSNS4IpWDoOhPWdUvVcwH4fGAWblyYuLsD4LmcZv0DM2wkLZGfw/exec';
+        var GAS_URL = 'https://script.google.com/macros/s/AKfycbwEhV3wPnZU-VN9iTsDC3pkvCB-babz0ELwaTRfZM22Yd0PTbgxsazWHoz8TRRZdPrlWQ/exec';
         var fieldLabels = { name: 'お名前', company: '会社名', email: 'メールアドレス', industry: '業種', department: '部署', position: '役職' };
-
-        (function() {
-            var params = new URLSearchParams(window.location.search);
-            var ref = params.get('ref');
-            if (ref) {
-                var refField = document.getElementById('refField');
-                if (refField) refField.value = ref;
-                var emailField = document.querySelector('input[name="email"]');
-                if (emailField && !emailField.value) emailField.value = ref;
-            }
-        })();
 
         function showConfirm(e) {
             e.preventDefault();
@@ -379,6 +370,9 @@
             var btn = document.querySelector('#confirmOverlay button:last-child');
             btn.textContent = '送信中...';
             btn.disabled = true;
+
+            var formData = new FormData(form);
+            // GAS doPost はフォームPOSTを受け付ける
             form.action = GAS_URL;
             form.method = 'POST';
             form.submit();

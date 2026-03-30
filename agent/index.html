@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link rel="icon" href="https://www.google.com/s2/favicons?domain=momo-gpt.com&sz=32" type="image/png">
     <title>MoMo パートナー通信 | ビジネスパートナー限定メルマガ</title>
     <meta name="description" content="株式会社MoMoのビジネスパートナー限定メールマガジン。紹介報酬情報、AI市場レポート、パートナー成功事例をお届けします。" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -70,8 +71,10 @@
 
         #confirmOverlay.active {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             justify-content: center;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
         }
     </style>
 </head>
@@ -204,7 +207,6 @@
                         </div>
                         <form id="optinForm" class="space-y-6 relative z-10" onsubmit="return showConfirm(event)">
                             <input type="hidden" name="type" value="agent" />
-                            <input type="hidden" name="ref" id="refField" value="" />
 
                             <div>
                                 <label class="block text-sm font-medium text-text-main mb-2" for="name">お名前 <span class="text-primary text-xs ml-1">必須</span></label>
@@ -274,7 +276,7 @@
 
     <!-- 確認画面オーバーレイ -->
     <div id="confirmOverlay">
-        <div class="max-w-2xl w-full bg-white rounded-2xl shadow-xl border border-slate-200 p-8 md:p-12 mx-4">
+        <div class="max-w-2xl w-full bg-white rounded-2xl shadow-xl border border-slate-200 p-8 md:p-12 mx-4 my-auto" style="flex-shrink:0">
             <div class="text-center mb-10">
                 <h2 class="text-2xl font-black text-text-main mb-2">登録内容の確認</h2>
                 <p class="text-text-sub">内容に誤りがないかご確認ください。</p>
@@ -288,19 +290,8 @@
     </div>
 
     <script>
-        var GAS_URL = 'https://script.google.com/macros/s/AKfycbwP7Duybewv7KuEP5DhSNS4IpWDoOhPWdUvVcwH4fGAWblyYuLsD4LmcZv0DM2wkLZGfw/exec';
+        var GAS_URL = 'https://script.google.com/macros/s/AKfycbwEhV3wPnZU-VN9iTsDC3pkvCB-babz0ELwaTRfZM22Yd0PTbgxsazWHoz8TRRZdPrlWQ/exec';
         var fieldLabels = { name: 'お名前', company: '会社名', email: 'メールアドレス', industry: '職種', department: '部署', position: '役職' };
-
-        (function() {
-            var params = new URLSearchParams(window.location.search);
-            var ref = params.get('ref');
-            if (ref) {
-                var refField = document.getElementById('refField');
-                if (refField) refField.value = ref;
-                var emailField = document.querySelector('input[name="email"]');
-                if (emailField && !emailField.value) emailField.value = ref;
-            }
-        })();
 
         function showConfirm(e) {
             e.preventDefault();
