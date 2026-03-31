@@ -355,10 +355,7 @@
             btn.disabled = true;
             var formData = new FormData(form);
             var params = new URLSearchParams(formData).toString();
-            fetch(GAS_URL, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: params,
+            fetch(GAS_URL + '?' + params, {
                 mode: 'no-cors'
             }).then(function() {
                 window.location.href = 'thanks.html';
