@@ -315,15 +315,9 @@
             var btn = document.querySelector('#confirmOverlay button:last-child');
             btn.textContent = '送信中...';
             btn.disabled = true;
-            var formData = new FormData(form);
-            var params = new URLSearchParams(formData).toString();
-            fetch(GAS_URL + '?' + params, {
-                mode: 'no-cors'
-            }).then(function() {
-                window.location.href = 'thanks.html';
-            }).catch(function() {
-                window.location.href = 'thanks.html';
-            });
+            form.action = GAS_URL;
+            form.method = 'GET';
+            form.submit();
         }
 
         function escapeHtml(str) { var d = document.createElement('div'); d.textContent = str; return d.innerHTML; }
